@@ -4,7 +4,7 @@ module Api
       before_action :set_airline, only: [:show, :update, :destroy]
 
       protect_from_forgery with: :null_session
-
+      
       def index
         @airlines = Airline.all()
         render status: 200, json: AirlineSerializer.new(
