@@ -1,4 +1,6 @@
-class ReviewSerializer
+class AirlineSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :title, :description, :score, :airline_id
+  attributes :name, :image_url, :slug
+  
+  has_many :reviews
 end

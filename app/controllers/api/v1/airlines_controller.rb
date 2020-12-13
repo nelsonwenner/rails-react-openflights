@@ -32,11 +32,11 @@ module Api
 
       def update
         if @airline.update(airline_params)
-          return render status: 200, json: AirlineSerializer.new(
+          render status: 200, json: AirlineSerializer.new(
             @airline, options
           ).serialized_json
         else
-          return render status: 400, json: @airline.errors.messages.to_json
+          render status: 400, json: @airline.errors.messages.to_json
         end
       end
 
