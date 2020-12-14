@@ -1,5 +1,8 @@
-import React,{ useRef, useState, useEffect } from 'react'
+import React,{ useRef, useState, useEffect, Fragment } from 'react'
 import AxiosHelper from '../../utils/Requests/AxiosHelper'
+import {Column, Main, Wrapper } from './styles'
+import Review from './Review'
+import Header from './Header'
 import axios from 'axios'
 
 export default (props) => {
@@ -81,12 +84,43 @@ export default (props) => {
 
     userReviews = reviews.map((review, index) => { 
       return (
-        
+        <Review
+          key={index}
+          id={review.id}
+          attributes={review.attributes}
+          handleDestroy={handleDestroy}
+        />
       )
     })
   }
 
   return (
-   
+    <Wrapper>
+      { 
+        loaded &&
+        <Fragment>
+          <Column>
+            <Main>
+              <Header 
+                attributes={airline.data.attributes}
+                reviews={reviews}
+                average={average}
+              />
+              {userReviews}
+            </Main>
+          </Column>
+          <Column>
+            <ReviewForm
+              name={airline.data.attributes.name}
+              review={review}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              setRating={setRating}
+              error={error}
+            />
+          </Column>
+        </Fragment>
+      }
+    </Wrapper>
   )
 }
