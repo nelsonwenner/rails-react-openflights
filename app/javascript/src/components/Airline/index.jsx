@@ -30,7 +30,7 @@ export default (props) => {
     e.preventDefault()
 
     AxiosHelper()
-
+    
     const airline_id = parseInt(airline.data.id)
     axios.post('/api/v1/reviews', { ...review, airline_id })
     .then(res => {
@@ -50,7 +50,7 @@ export default (props) => {
       setError(error)
     })
   }
-  
+
   const handleDestroy = (id, e) => {
     e.preventDefault()
 
