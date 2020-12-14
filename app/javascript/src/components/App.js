@@ -6,9 +6,11 @@ import Airline from './Airline'
 import { Header } from './theme/Header'
 
 export default () => (
-  <Switch>
+  <>
     <Header />
-    <Route exact path="/" component={ Airlines } />
-    <Route exact path="/airlines/:slug" component={ Airline } />
-  </Switch> 
+    <Switch>
+      <Route exact path="/" component={ Airlines } />
+      <Route exact path="/airlines/:slug" component={ Airline } />
+    </Switch> 
+  </>
 )
