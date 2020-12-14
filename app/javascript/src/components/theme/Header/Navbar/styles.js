@@ -23,7 +23,7 @@ export const Item = styled.li`
   border-bottom: 2px solid transparent;
   margin-right: 3rem;
 
-  &:nth-last-child(1) {
+  &:last-child {
     margin-right: 0;
   }
 `
