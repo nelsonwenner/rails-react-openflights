@@ -1,4 +1,13 @@
 import React,{ Fragment } from 'react'
+import { 
+  ReviewWrapper,
+  ReviewHeadline,
+  RatingBox,
+  RatingBoxTitle,
+  RatingContainer,
+  Field,
+  Error
+ } from './styles'
 
 export default (props) => {
 

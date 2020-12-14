@@ -43,7 +43,7 @@ export const RatingBox = styled.div`
   }
 `
 
-const Field = styled.div`
+export const Field = styled.div`
   border-radius: 4px;
 
   input {
@@ -65,7 +65,7 @@ const Field = styled.div`
   }
 `
 
-const SubmitBtn = styled.button`
+export const SubmitBtn = styled.button`
   color: #fff;
   background-color: #71b406;
   border-radius: 4px;   
@@ -82,7 +82,7 @@ const SubmitBtn = styled.button`
   }
 `
 
-const ReviewWrapper = styled.div`
+export const ReviewWrapper = styled.div`
   background:white;
   padding:20px;
   margin-left: 15px;
@@ -95,20 +95,20 @@ const ReviewWrapper = styled.div`
   padding-right: 80px;
 `
 
-const ReviewHeadline = styled.div`
+export const ReviewHeadline = styled.div`
   font-size:20px;
   padding: 15px 0;
   font-weight: bold;
   color: #fff;
 `
 
-const RatingBoxTitle = styled.div`
+export const RatingBoxTitle = styled.div`
   font-size: 20px;
   padding-bottom: 20px;
   font-weight: bold;
 `
 
-const Error = styled.div`
+export const Error = styled.div`
   width: 100%;
   color: rgb(255, 80, 44);
   border: 1px solid rgb(255, 80, 44);
