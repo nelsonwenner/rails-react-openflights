@@ -14,7 +14,7 @@ import {
 
 export default ({attributes, ...props}) => {
   const {title, description, score} = attributes
-
+  
   return (
     <Card>
       <RatingContainer>
@@ -29,7 +29,7 @@ export default ({attributes, ...props}) => {
         {description}
       </Description>
         { 
-          email === attributes.email &&
+          attributes.email &&
           <Options>
             <Icon onClick={props.handleDestroy.bind(this, props.id)}>
               <i className="fa fa-trash"></i>

@@ -1,6 +1,7 @@
-import React,{ useRef, useState, useEffect, Fragment } from 'react'
+import React,{ useState, useEffect, Fragment } from 'react'
 import AxiosHelper from '../../utils/Requests/AxiosHelper'
 import {Column, Main, Wrapper } from './styles'
+import ReviewForm from './ReviewForm'
 import Review from './Review'
 import Header from './Header'
 import axios from 'axios'
@@ -8,14 +9,14 @@ import axios from 'axios'
 export default (props) => {
   const [airline, setAirline] = useState({})
   const [reviews, setReviews] = useState([])
-  const [review, setReview] = useRef({title: '', description: '', score: 0})
+  const [review, setReview] = useState({title: '', description: '', score: 0})
   const [error, setError] = useState('')
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     const slug = props.match.params.slug
 
-    axios.get(`api/v1/airlines/${slug}`)
+    axios.get(`/api/v1/airlines/${slug}`)
     .then(res => {
       setAirline(res.data)
       setReviews(res.data.included)

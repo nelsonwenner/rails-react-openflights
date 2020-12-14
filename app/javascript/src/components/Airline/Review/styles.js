@@ -14,11 +14,13 @@ export const Title = styled.div`
   padding: 20px 0px 0px 0px;
   font-family: 'Poppins-Bold';
   font-size: 18px;
+  color: #181818;
 `
 
 export const Description = styled.div`
   padding: 0 0 20px 0;
   font-size: 14px;
+  color: #181818;
 `
 
 export const Options = styled.div`
