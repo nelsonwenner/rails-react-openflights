@@ -3,8 +3,8 @@ import AxiosHelper from '../../utils/Requests/AxiosHelper'
 import Authenticate from '../../utils/Auth/Authenticate'
 import axios from 'axios'
 
-const ProviderContext = createContext();
-export const useProvider = () => useContext(ProviderContext);
+const ProviderContext = createContext()
+export const useProvider = () => useContext(ProviderContext)
 
 export const Provider = ({ children }) => {
   const [state, setState] = useState({isAuth: false, email: ''})
@@ -15,7 +15,7 @@ export const Provider = ({ children }) => {
     .catch(err => console.error(err))
   }, [])
 
-  login = (user, props, e) => {
+  const login = (user, props, e) => {
     e.preventDefault()
 
     AxiosHelper()
@@ -27,7 +27,7 @@ export const Provider = ({ children }) => {
     .catch(err => console.error(err))
   }
 
-  signup = (user, props, e) => {
+  const signup = (user, props, e) => {
     e.preventDefault()
 
     AxiosHelper()
@@ -39,7 +39,7 @@ export const Provider = ({ children }) => {
     .catch(err => console.error(err))
   }
 
-  forgotPass = (user, props, e) => {
+  const forgotPass = (user, props, e) => {
     e.preventDefault()
 
     AxiosHelper()
@@ -51,7 +51,7 @@ export const Provider = ({ children }) => {
     .catch(err => console.error(err))
   }
 
-  resetPass = (user, token, e) => {
+  const resetPass = (user, token, e) => {
     e.preventDefault()
 
     AxiosHelper()
@@ -63,7 +63,7 @@ export const Provider = ({ children }) => {
     .catch(err => console.error(err))
   }
 
-  logout = (e) => {
+  const logout = (e) => {
     e.preventDefault()
 
     AxiosHelper()
@@ -74,7 +74,7 @@ export const Provider = ({ children }) => {
     })
     .catch( err => console.error(err))
   }
-
+  
   return (
     <ProviderContext.Provider 
       value={{ 
