@@ -20,7 +20,7 @@ export const Column = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-
+  
   &:last-child {
     background: black;
     border-top: 1px solid rgba(255,255,255,0.5);
