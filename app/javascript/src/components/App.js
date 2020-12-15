@@ -2,6 +2,8 @@ import React from 'react'
 import './styles.css'
 import { Route, Switch } from 'react-router-dom'
 import { Provider } from './providers/Provider'
+import UnprotectedRoute from './UnprotectedRoute'
+import Forgot from './Auth/Password/Forget'
 import { Header } from './theme/Header'
 import Register from './Auth/Register'
 import Airlines from './Airlines'
@@ -14,8 +16,9 @@ export default () => (
     <Switch>
       <Route exact path="/" component={ Airlines } />
       <Route exact path="/airlines/:slug" component={ Airline } />
-      <Route path="/login" component={ Login }/>
-      <Route exact path="/register" component={ Register } />
+      <UnprotectedRoute path="/login" component={ Login }/>
+      <UnprotectedRoute exact path="/register" component={ Register } />
+      <UnprotectedRoute path="/forgot-password" component={ Forgot }/>
     </Switch> 
   </Provider>
 )
