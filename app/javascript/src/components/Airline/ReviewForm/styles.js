@@ -49,7 +49,7 @@ export const Field = styled.div`
   border-radius: 4px;
 
   input {
-    width: 96%;
+    width: 100%;
     min-height: 5rem;
     border-radius: 4px;
     border: 1px solid #E6E6E6;
