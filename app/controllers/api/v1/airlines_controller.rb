@@ -7,7 +7,7 @@ module Api
       def index
         render status: 200, json: serializer(airlines, options)
       end
-
+      
       def show
         render status: 200, json: serializer(airline, options)
       end
@@ -21,7 +21,7 @@ module Api
           render status: 400, json: errors(airline)
         end
       end
-
+      
       def update
         if @airline.update(airline_params)
           render status: 200, json: serializer(airline, options)
