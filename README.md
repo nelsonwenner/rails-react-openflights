@@ -1,24 +1,63 @@
-# README
+<h1 align="center">RAILS OPEN FLIGHTS</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/nelsonwenner/rails-react-openflights?color=%2304D361">
 
-Things you may want to cover:
+  <a href="https://github.com/nelsonwenner">
+    <img alt="Made by @nelsonwenner" src="https://img.shields.io/badge/made%20by-%40nelsonwenner-%2304D361">
+  </a>
 
-* Ruby version
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 
-* System dependencies
+  <a href="https://github.com/nelsonwenner/rails-react-openflights/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/nelsonwenner/rails-react-openflights?style=social">
+  </a>
+</p>
 
-* Configuration
+## :rocket: Technologies
 
-* Database creation
+* [Ruby](https://www.ruby-lang.org/)
+* [NodeJS](https://nodejs.org/en/)
+* [ReactJS](https://reactjs.org/)
 
-* Database initialization
+## :electric_plug: Prerequisites
 
-* How to run the test suite
+- [Ruby (2.7.1)](https://www.ruby-lang.org/)
+- [Rails (>= 6.0.3)](https://rubyonrails.org/)
 
-* Services (job queues, cache servers, search engines, etc.)
+## :information_source: Getting Started
 
-* Deployment instructions
+1. Fork this repository and clone it on your machine.
+2. Change the directory to `rails-react-openflights` where you cloned it.
 
-* ...
+## :closed_lock_with_key: Database Getting Started 
+
+```shell
+/* create database */
+$ rails db:create
+
+/* add migrate */
+$ rails db:migrate
+
+/* add seed */
+$ rails db:seed
+```
+
+## :closed_lock_with_key: App Getting Started 
+
+```shell
+/* install packages */
+$ npm run install or yarn install
+
+/* run webpack - optional */
+$ ./bin/webpack-dev-server 
+
+/* run app */
+$ rails s
+```
+  * Open the host [localhost:3000](http://localhost:3000) 
+
+## :memo: License
+This project is under the MIT license. See the [LICENSE](LICENSE.md) for more information.
+
+---
