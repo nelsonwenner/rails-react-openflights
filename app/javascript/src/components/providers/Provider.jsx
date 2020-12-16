@@ -20,11 +20,11 @@ export const Provider = ({ children }) => {
 
     AxiosHelper()
     axios.post('/api/v1/auth', { user: { ...user } }, { withCredentials: true })
-    .then(_res => {
+    .then(res => {
       setState({ isAuth: true })
       props.history.push('/')
     })
-    .catch(err => console.error(err))
+    .catch(err => console.log(err))
   }
 
   const signup = (user, props, e) => {

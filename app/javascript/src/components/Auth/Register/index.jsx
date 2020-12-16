@@ -41,7 +41,7 @@ export default (props) => {
                 name="password"
               />
             </Field>
-            <LoginButton type="submit">Login</LoginButton>
+            <LoginButton type="submit">Register</LoginButton>
           </Form>   
         </FormContainer>
       </FormWrapper>

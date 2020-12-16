@@ -7,7 +7,7 @@ module Api
           password: params[:user][:password],
           password_confirmation: params[:user][:password]
         )
-
+        
         if user.save
           session[:user_id] = user.id
           render json: { status: :success, logged_in: true }, status: 204
