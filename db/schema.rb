@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_12_11_143354) do
     t.string "name"
     t.string "image_url"
     t.string "slug"
+    t.integer "average_score", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,10 +26,22 @@ ActiveRecord::Schema.define(version: 2020_12_11_143354) do
     t.string "description"
     t.integer "score"
     t.integer "airline_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["airline_id"], name: "index_reviews_on_airline_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "reviews", "airlines"
+  add_foreign_key "reviews", "users"
 end

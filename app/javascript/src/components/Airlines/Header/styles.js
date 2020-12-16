@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   padding:100px 100px 10px 100px;
-  
+  color: #181818;
+
   h1 {
     font-size:42px;
   }

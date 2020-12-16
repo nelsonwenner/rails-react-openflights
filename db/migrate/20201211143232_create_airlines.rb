@@ -4,7 +4,8 @@ class CreateAirlines < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :image_url
       t.string :slug
-
+      t.integer :average_score, default: 0 
+      
       t.timestamps
     end
   end

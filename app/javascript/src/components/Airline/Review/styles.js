@@ -45,11 +45,13 @@ export const Author = styled.div`
   font-size: 16px;
   font-family: 'Poppins-Bold';
   margin: 0 8px;
+  color: #181818;
 `
 
 export const RatingContainer = styled.div`
   display: flex;
   flex-direction: row;
+  color: #181818;
 `
 
 export const AvatarWrapper = styled.div`

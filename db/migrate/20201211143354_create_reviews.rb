@@ -4,9 +4,10 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :description
       t.integer :score
-      t.belongs_to :airline, null: false, foreign_key: true
-
-      t.timestamps
+      t.references :airline, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
+      
+      t.timestamps  
     end
   end
 end

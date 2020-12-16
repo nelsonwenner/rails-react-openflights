@@ -1,42 +1,32 @@
 module Api
   module V1
-    class AirlinesController < ApplicationController
+    class AirlinesController < ApiController
       before_action :set_airline, only: [:show, :update, :destroy]
-
-      protect_from_forgery with: :null_session
+      before_action :authenticate, only: [:create, :update, :destroy]
       
       def index
-        @airlines = Airline.all()
-        render status: 200, json: AirlineSerializer.new(
-          @airlines, options
-        ).serialized_json
+        render status: 200, json: serializer(airlines, options)
       end
 
       def show
-        render status: 200, json: AirlineSerializer.new(
-          @airline, options
-        ).serialized_json
+        render status: 200, json: serializer(airline, options)
       end
       
       def create
         @airline = Airline.new(airline_params)
 
         if @airline.save
-          render status: 201, json: AirlineSerializer.new(
-            @airline
-          ).serialized_json
+          render status: 201, json: serializer(airline)
         else
-          render status: 400, json: @airline.errors.messages.to_json
+          render status: 400, json: errors(airline)
         end
       end
 
       def update
         if @airline.update(airline_params)
-          render status: 200, json: AirlineSerializer.new(
-            @airline, options
-          ).serialized_json
+          render status: 200, json: serializer(airline, options)
         else
-          render status: 400, json: @airline.errors.messages.to_json
+          render status: 400, json: errors(airline)
         end
       end
 
@@ -45,6 +35,14 @@ module Api
       end
 
       private
+        def airlines
+          @airlines ||= Airline.includes(reviews: :user).all
+        end
+
+        def airline
+          @airline ||= Airline.includes(reviews: :user).find_by(slug: params[:slug])
+        end
+
         def set_airline
           @airline = Airline.find_by(slug: params[:slug])
         end
@@ -55,6 +53,16 @@ module Api
 
         def options
           @options ||= { include: %i[reviews] }
+        end
+
+        def serializer(records, options = {})
+          AirlineSerializer
+            .new(records, options)
+            .serialized_json
+        end
+
+        def errors(record)
+          { errors: record.errors.messages }
         end
     end
   end
